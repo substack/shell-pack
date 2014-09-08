@@ -86,6 +86,28 @@ This is like the `'exit'` event but works after the event has already fired.
 
 Just like a real process, this event gets emitted with the process exit code.
 
+# usage
+
+This package also ships with a command-line version.
+
+```
+usage: shell-pack OPTIONS - COMMAND
+
+  Execute
+    
+  -c  Specify a command to run as a string instead of COMMAND.
+  -i  if given, pipe stdin into the spawned process
+
+usage: shell-pack -u OPTIONS
+       shell-pack # with no COMMAND given
+
+  Unpack STDIN into colorized channels.
+
+  -1, --stdout  color to use for stdout, default: green
+  -2, --stderr  color to use for stderr, default: red
+
+```
+
 # install
 
 With [npm](https://npmjs.org) do:
