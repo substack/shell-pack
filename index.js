@@ -1,8 +1,8 @@
 var multiplex = require('multiplex');
 var duplexer = require('duplexer2');
-var Writable = require('readable-stream/writable');
-var Readable = require('readable-stream/readable');
 var concat = require('concat-stream');
+var Writable = require('readable-stream/writable');
+var readonly = require('read-only-stream');
 
 exports.pack = function (ps) {
     var m = multiplex();
@@ -19,26 +19,7 @@ exports.pack = function (ps) {
         onend();
     });
     
-    var output = new Readable;
-    var waiting = false;
-    
-    m.on('readable', function () {
-        if (waiting) {
-            waiting = false;
-            output._read();
-        }
-    });
-    
-    output._read = function () {
-        var buf, reads = 0;
-        while ((buf = m.read()) !== null) {
-            output.push(buf);
-            reads ++;
-        }
-        if (reads === 0) waiting = true;
-    };
-    m.once('end', function () { output.push(null) });
-    return output;
+    return readonly(m);
 };
 
 exports.unpack = function () {
