@@ -1,0 +1,15 @@
+usage: shell-pack OPTIONS - COMMAND
+
+  Execute
+    
+  -c  Specify a command to run as a string instead of COMMAND.
+  -i  if given, pipe stdin into the spawned process
+
+usage: shell-pack -u OPTIONS
+       shell-pack # with no COMMAND given
+
+  Unpack STDIN into colorized channels.
+
+  -1, --stdout  color to use for stdout, default: green
+  -2, --stderr  color to use for stderr, default: red
+
