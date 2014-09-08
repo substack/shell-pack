@@ -30,7 +30,9 @@ test('pack/unpack', function (t) {
     ps.stderr.end('boop');
     ps.emit('exit', 123);
     
-    ps_.exitCode(function (code) {
-        t.equal(code, 123);
-    });
+    setTimeout(function () {
+        ps_.exitCode(function (code) {
+            t.equal(code, 123);
+        });
+    }, 5);
 });
