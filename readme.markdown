@@ -2,6 +2,8 @@
 
 pack and unpack stdout and stderr in a binary-efficient way
 
+[![build status](https://secure.travis-ci.org/substack/shell-pack.png)](http://travis-ci.org/substack/shell-pack)
+
 # example
 
 pack:
