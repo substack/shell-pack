@@ -31,6 +31,22 @@ ps.stdout.pipe(colorize('green')).pipe(process.stdout);
 ps.stderr.pipe(colorize('red')).pipe(process.stderr);
 ```
 
+Just pipe the pack output into the unpack:
+
+```
+$ node pack.js cal | node unpack.js
+   September 2014     
+Su Mo Tu We Th Fr Sa  
+    1  2  3  4  5  6  
+ 7  8  9 10 11 12 13  
+14 15 16 17 18 19 20  
+21 22 23 24 25 26 27  
+28 29 30           
+```
+
+In a real setting you would serialize the results in between piping the
+processes together.
+
 # methods
 
 ``` js

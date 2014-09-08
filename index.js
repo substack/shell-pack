@@ -1,5 +1,4 @@
 var multiplex = require('multiplex');
-var duplexer = require('duplexer2');
 var concat = require('concat-stream');
 var Writable = require('readable-stream/writable');
 var readonly = require('read-only-stream');

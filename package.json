@@ -1,0 +1,42 @@
+{
+  "name": "shell-pack",
+  "version": "1.0.0",
+  "description": "pack and unpack stdout and stderr in a binary-efficient way",
+  "main": "index.js",
+  "dependencies": {
+    "multiplex": "^3.0.0",
+    "concat-stream": "^1.4.6",
+    "read-only-stream": "^1.0.0",
+    "readable-stream": "^1.0.31"
+  },
+  "devDependencies": {
+    "through2": "~0.6.1",
+    "ansi-color-stream": "^1.0.0",
+    "tape": "^2.13.2",
+    "covert": "^1.0.0"
+  },
+  "scripts": {
+    "test": "tape test/*.js",
+    "coverage": "covert test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/substack/shell-pack.git"
+  },
+  "homepage": "https://github.com/substack/shell-pack",
+  "keywords": [
+    "shell",
+    "multiplex",
+    "store",
+    "pack",
+    "unpack",
+    "stderr",
+    "stdout"
+  ],
+  "author": {
+    "name": "James Halliday",
+    "email": "mail@substack.net",
+    "url": "http://substack.net"
+  },
+  "license": "MIT"
+}
