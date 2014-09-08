@@ -23,14 +23,16 @@ exports.pack = function (ps) {
     var waiting = false;
     
     m.on('readable', function () {
-        if (waiting) output._read();
-        waiting = false;
+        if (waiting) {
+            waiting = false;
+            output._read();
+        }
     });
     
     output._read = function () {
         var buf, reads = 0;
         while ((buf = m.read()) !== null) {
-            this.push(buf);
+            output.push(buf);
             reads ++;
         }
         if (reads === 0) waiting = true;
